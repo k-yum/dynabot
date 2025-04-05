@@ -55,7 +55,10 @@
             <origin xyz="0.5495 0 0.08135" rpy="0 0 0" />
         </xacro:inertial_box>
     </link>
-
+    
+    <gazebo reference="chassis">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!--LEFT WHEEL LINK-->
     <joint name="left_wheel_joint" type="continuous">
@@ -84,6 +87,9 @@
         </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="left_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <!--RIGHT WHEEL LINK-->
     <joint name="right_wheel_joint" type="continuous">
@@ -112,6 +118,9 @@
         </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="right_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <!--FRONT CASTER WHEEL LINK-->
     <joint name="front_caster_wheel_joint" type="fixed">
@@ -137,6 +146,11 @@
         </xacro:inertial_sphere>
     </link>
 
+    <gazebo reference="front_caster_wheel">
+        <material>Gazebo/Black</material>
+        <mu1 value="0.001" />
+        <mu2 value="0.001" />
+    </gazebo>
 
     <!--REAR CASTER WHEEL LINK-->
     <joint name="rear_caster_wheel_joint" type="fixed">
@@ -161,6 +175,12 @@
             <origin xyz="0 0 0" rpy="0 0 0" />
         </xacro:inertial_sphere>
     </link>
+
+    <gazebo reference="rear_caster_wheel">
+        <material>Gazebo/Black</material>
+        <mu1 value="0.001" />
+        <mu2 value="0.001" />
+    </gazebo>
 
     <!--BOTTOM FRAME-->
     <joint name="bottom_frame_joint" type="fixed">
@@ -187,6 +207,10 @@
             <origin xyz="0.3298 0 0.14925" rpy="0 0 0" />
         </xacro:inertial_box>
     </link>
+
+    <gazebo reference="bottom_frame">
+        <material>Gazebo/White</material>
+    </gazebo>
 
 
     <!--TOP FRAME-->
@@ -215,6 +239,9 @@
         </xacro:inertial_box>
     </link>
 
+    <gazebo reference="top_frame">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!--CAMERA-->
     <joint name="camera_joint" type="fixed">
@@ -242,6 +269,9 @@
         </xacro:inertial_box>
     </link>
 
+    <gazebo reference="camera_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
 
     <!--GPS HOLDER + LIGHTS-->
     <joint name="gps_holder_joint" type="fixed">
@@ -269,6 +299,9 @@
         </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="gps_holder_link">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!--GPS-->
     <joint name="gps_joint" type="fixed">
@@ -296,6 +329,10 @@
         </xacro:inertial_box>
     </link>
 
+    <gazebo reference="gps_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
     <!--IMU-->
     <joint name="imu_joint" type="fixed">
         <parent link="bottom_frame" />
@@ -321,5 +358,9 @@
             <origin xyz="0 0 0" rpy="0 0 0" />
         </xacro:inertial_box>
     </link>
+
+    <gazebo reference="imu_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
 
 </robot>
