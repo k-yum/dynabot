@@ -1,0 +1,5 @@
+# This is a controller for ros2_control so that gazebo can run in sim_time
+
+controller_manager:
+  ros__parameters:
+    use_sim_time: true
