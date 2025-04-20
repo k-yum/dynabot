@@ -4,7 +4,7 @@
     <xacro:unless value="$(arg sim_mode)">
         <ros2_control name="RealRobot" type="system">
             <hardware>
-                <plugin>dynabot_control/DiffDriveDynabotHardware</plugin>
+                <plugin>dynabot_hardware/DynabotSystemHardware</plugin>
                 <param name="serial_port">/dev/ttyACM0</param>
                 <param name="wheel_radius">0.202</param>
                 <param name="wheel_separation">0.6689</param>
